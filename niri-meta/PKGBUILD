@@ -6,19 +6,19 @@ pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
 license=('custom:meta')
-depends=('niri')
 # based on https://wiki.archlinux.org/title/Niri
-optdepends=(
-  'fuzzel: application launcher'
-  'mako: notification daemon'
-  'waybar: Wayland bar'
-  'xdg-desktop-portal-gtk: screen sharing support'
-  'xdg-desktop-portal-gnome: screen sharing support (GNOME variant)'
-  'alacritty: default terminal'
-  'swaybg: set wallpaper background'
-  'swayidle: idle management'
-  'swaylock: lock screen on idle'
-  'xwayland-satellite: X11 application support in Wayland'
+depends=(
+  'niri'                         # The main tiling Wayland compositor
+  'fuzzel'                       # Default application launcher in Niri
+  'mako'                         # Notification daemon
+  'waybar'                       # Wayland bar (status/info bar)
+  'xdg-desktop-portal-gtk'      # Enables screen sharing (GTK backend)
+  'xdg-desktop-portal-gnome'    # Enables screen sharing (GNOME backend)
+  'alacritty'                    # Default terminal emulator
+  'swaybg'                       # Sets background image
+  'swayidle'                     # Handles idle detection
+  'swaylock'                     # Locks the screen when idle
+  'xwayland-satellite'          # Allows running X11 applications on Wayland
 )
 options=(!emptydirs)
 pkgver() {
