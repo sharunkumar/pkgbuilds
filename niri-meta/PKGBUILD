@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=niri-meta
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
@@ -10,7 +10,7 @@ license=('custom:meta')
 depends=(
   'niri'                         # The main tiling Wayland compositor
   'fuzzel'                       # Default application launcher in Niri
-  # 'mako'                         # Notification daemon
+  'mako'                         # Notification daemon
   'waybar'                       # Wayland bar (status/info bar)
   'xdg-desktop-portal-gtk'      # Enables screen sharing (GTK backend)
   'xdg-desktop-portal-gnome'    # Enables screen sharing (GNOME backend)
