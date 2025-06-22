@@ -19,6 +19,7 @@ depends=(
   'swayidle'                     # Handles idle detection
   'swaylock'                     # Locks the screen when idle
   'xwayland-satellite-git'          # Allows running X11 applications on Wayland
+  'pavucontrol'                  # PulseAudio volume control GUI
 )
 options=(!emptydirs)
 pkgver() {

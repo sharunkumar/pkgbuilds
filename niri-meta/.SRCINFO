@@ -16,6 +16,7 @@ pkgbase = niri-meta
 	depends = swayidle
 	depends = swaylock
 	depends = xwayland-satellite-git
+	depends = pavucontrol
 	options = !emptydirs
 
 pkgname = niri-meta
