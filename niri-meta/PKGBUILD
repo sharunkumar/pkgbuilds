@@ -1,6 +1,6 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=niri-meta
-pkgver=2.0
+pkgver=2.1
 pkgrel=1
 pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
