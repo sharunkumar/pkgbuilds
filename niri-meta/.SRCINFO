@@ -1,11 +1,11 @@
 pkgbase = niri-meta
 	pkgdesc = Meta package for Niri and its recommended environment
-	pkgver = 1.0
-	pkgrel = 4
+	pkgver = 2.0
+	pkgrel = 1
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
-	depends = niri
+	depends = niri-git
 	depends = fuzzel
 	depends = mako
 	depends = waybar
@@ -15,7 +15,7 @@ pkgbase = niri-meta
 	depends = swaybg
 	depends = swayidle
 	depends = swaylock
-	depends = xwayland-satellite
+	depends = xwayland-satellite-git
 	options = !emptydirs
 
 pkgname = niri-meta
