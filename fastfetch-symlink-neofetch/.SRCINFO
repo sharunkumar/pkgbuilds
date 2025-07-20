@@ -1,0 +1,10 @@
+pkgbase = fastfetch-symlink-neofetch
+	pkgdesc = Creates symbolic link of fastfetch to neofetch
+	pkgver = 1
+	pkgrel = 1
+	arch = any
+	depends = fastfetch
+	provides = neofetch
+	conflicts = neofetch
+
+pkgname = fastfetch-symlink-neofetch
