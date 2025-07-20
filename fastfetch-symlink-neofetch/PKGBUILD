@@ -2,7 +2,7 @@
 
 pkgname=fastfetch-symlink-neofetch
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc='Creates symbolic link of fastfetch to neofetch'
 arch=('any')
 depends=('fastfetch')
@@ -13,9 +13,7 @@ package() {
     install -dm755 "$pkgdir/usr/bin/"
     cd "$pkgdir/usr/bin/"
 
-    chmod 755 *
-
     for _link in neofetch; do
-        ln -s nvim $_link
+        ln -s fastfetch $_link
     done
 }
