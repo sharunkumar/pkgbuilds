@@ -1,7 +1,7 @@
 pkgbase = niri-meta
 	pkgdesc = Meta package for Niri and its recommended environment
 	pkgver = 2.1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
