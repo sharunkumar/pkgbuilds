@@ -1,6 +1,6 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=niri-meta
-pkgver=2.1
+pkgver=3.0
 pkgrel=2
 pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
@@ -8,24 +8,24 @@ url="https://github.com/sharunkumar/pkgbuilds"
 license=('custom:meta')
 # based on https://wiki.archlinux.org/title/Niri
 depends=(
-  'niri-git'                 # The main tiling Wayland compositor
-  'fuzzel'                   # Default application launcher in Niri
-  'mako'                     # Notification daemon
-  'waybar'                   # Wayland bar (status/info bar)
-  'xdg-desktop-portal-gtk'   # Enables screen sharing (GTK backend)
-  'xdg-desktop-portal-gnome' # Enables screen sharing (GNOME backend)
-  'alacritty'                # Default terminal emulator
-  'swaybg'                   # Sets background image
-  'swayidle'                 # Handles idle detection
-  'swaylock'                 # Locks the screen when idle
-  'xwayland-satellite-git'   # Allows running X11 applications on Wayland
-  'pavucontrol'              # PulseAudio volume control GUI
+	'niri'                     # The main tiling Wayland compositor
+	'fuzzel'                   # Default application launcher in Niri
+	'mako'                     # Notification daemon
+	'waybar'                   # Wayland bar (status/info bar)
+	'xdg-desktop-portal-gtk'   # Enables screen sharing (GTK backend)
+	'xdg-desktop-portal-gnome' # Enables screen sharing (GNOME backend)
+	'alacritty'                # Default terminal emulator
+	'swaybg'                   # Sets background image
+	'swayidle'                 # Handles idle detection
+	'swaylock'                 # Locks the screen when idle
+	'xwayland-satellite-git'   # Allows running X11 applications on Wayland
+	'pavucontrol'              # PulseAudio volume control GUI
 )
 options=(!emptydirs)
 pkgver() {
-  echo "$pkgver"
+	echo "$pkgver"
 }
 package() {
-  mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
-  echo "This is a meta package." >"$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	echo "This is a meta package." >"$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
