@@ -1,6 +1,6 @@
 pkgbase = niri-meta
 	pkgdesc = Meta package for Niri and its recommended environment
-	pkgver = 3.0
+	pkgver = 3.1
 	pkgrel = 2
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
@@ -15,7 +15,7 @@ pkgbase = niri-meta
 	depends = swaybg
 	depends = swayidle
 	depends = swaylock
-	depends = xwayland-satellite-git
+	depends = xwayland-satellite
 	depends = pavucontrol
 	options = !emptydirs
 

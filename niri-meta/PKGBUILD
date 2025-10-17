@@ -1,6 +1,6 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=niri-meta
-pkgver=3.0
+pkgver=3.1
 pkgrel=2
 pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
@@ -18,7 +18,7 @@ depends=(
 	'swaybg'                   # Sets background image
 	'swayidle'                 # Handles idle detection
 	'swaylock'                 # Locks the screen when idle
-	'xwayland-satellite-git'   # Allows running X11 applications on Wayland
+	'xwayland-satellite'       # Allows running X11 applications on Wayland
 	'pavucontrol'              # PulseAudio volume control GUI
 )
 options=(!emptydirs)
