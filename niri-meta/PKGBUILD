@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=niri-meta
 pkgver=4
-pkgrel=2
+pkgrel=3
 pkgdesc="Meta package for Niri and its recommended environment"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
@@ -17,6 +17,7 @@ depends=(
 	'swayidle'                 # Handles idle detection
 	'xwayland-satellite'       # Allows running X11 applications on Wayland
 	'pavucontrol'              # PulseAudio volume control GUI
+	'cliphist'                 # Clipboard History
 	# 'mako'                     # Notification daemon
 	# 'fuzzel'                   # Default application launcher in Niri
 	# 'swaybg'                   # Sets background image
