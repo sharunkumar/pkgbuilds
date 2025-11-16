@@ -1,13 +1,13 @@
 pkgbase = niri-meta
 	pkgdesc = Meta package for Niri and its recommended environment
-	pkgver = 3.1
-	pkgrel = 2
+	pkgver = 4
+	pkgrel = 1
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
 	depends = niri
 	depends = fuzzel
-	depends = mako
+	depends = noctalia-shell
 	depends = waybar
 	depends = xdg-desktop-portal-gtk
 	depends = xdg-desktop-portal-gnome
