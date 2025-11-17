@@ -1,7 +1,7 @@
 pkgbase = niri-meta
 	pkgdesc = Meta package for Niri and its recommended environment
 	pkgver = 4
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
@@ -15,6 +15,7 @@ pkgbase = niri-meta
 	depends = xwayland-satellite
 	depends = pavucontrol
 	depends = cliphist
+	depends = matugen
 	options = !emptydirs
 
 pkgname = niri-meta
