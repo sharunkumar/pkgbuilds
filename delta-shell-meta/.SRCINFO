@@ -1,7 +1,7 @@
 pkgbase = delta-shell-meta
 	pkgdesc = Meta package for Delta Shell
 	pkgver = 1
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
@@ -22,7 +22,6 @@ pkgbase = delta-shell-meta
 	depends = wl-clipboard
 	depends = gpu-screen-recorder
 	depends = geoclue
-	depends = tuned-ppd
 	depends = power-profiles-daemon
 	depends = brightnessctl
 	depends = bluez

@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=delta-shell-meta
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc="Meta package for Delta Shell"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
@@ -27,11 +27,12 @@ depends=(
 	'wl-clipboard'          # for clipboard
 	'gpu-screen-recorder'   # to record screen from control center
 	'geoclue'               # to autoload the location for weather
-	'tuned-ppd'             # to switch between power profiles
 	'power-profiles-daemon' # to switch between power profiles
 	'brightnessctl'         # for control screen brightness
 	'bluez'                 # for connect to bluetooth devices
 	'libgtop'               # for cpu usage
+
+	# 'tuned-ppd'             # to switch between power profiles
 )
 options=(!emptydirs)
 pkgver() {
