@@ -1,13 +1,14 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=delta-shell-meta
 pkgver=1
-pkgrel=3
+pkgrel=4
 pkgdesc="Meta package for Delta Shell"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
 license=('custom:meta')
 depends=(
 	# Required
+	'delta-shell-git'            # Delta Shell
 	'aylurs-gtk-shell'           # The main shell components
 	'libastal-hyprland'          # Hyprland integration for astal
 	'libastal-niri'              # Niri integration for astal

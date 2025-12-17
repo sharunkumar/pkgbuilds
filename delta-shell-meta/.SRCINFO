@@ -1,10 +1,11 @@
 pkgbase = delta-shell-meta
 	pkgdesc = Meta package for Delta Shell
 	pkgver = 1
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
+	depends = delta-shell-git
 	depends = aylurs-gtk-shell
 	depends = libastal-hyprland
 	depends = libastal-niri
