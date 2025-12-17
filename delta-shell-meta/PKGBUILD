@@ -1,26 +1,26 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=delta-shell-meta
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc="Meta package for Delta Shell"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
 license=('custom:meta')
 depends=(
 	# Required
-	'aylurs-gtk-shell'       # The main shell components
-	'libastal-hyprland'      # Hyprland integration for astal
-	'libastal-niri'          # Niri integration for astal
-	'libastal-apps'          # Application library for astal
-	'libastal-battery'       # Battery status library for astal
-	'libastal-bluetooth'     # Bluetooth library for astal
-	'libastal-mpris'         # MPRIS library for astal
-	'libastal-network'       # Network library for astal
-	'libastal-notifd'        # Notification daemon for astal
-	'libastal-powerprofiles' # Power profiles library for astal
-	'libastal-tray'          # System tray library for astal
-	'libastal-wireplumber'   # Wireplumber library for astal
-	'dart-sass'              # Sass compiler
+	'aylurs-gtk-shell'           # The main shell components
+	'libastal-hyprland'          # Hyprland integration for astal
+	'libastal-niri'              # Niri integration for astal
+	'libastal-apps'              # Application library for astal
+	'libastal-battery'           # Battery status library for astal
+	'libastal-bluetooth'         # Bluetooth library for astal
+	'libastal-mpris'             # MPRIS library for astal
+	'libastal-network'           # Network library for astal
+	'libastal-notifd'            # Notification daemon for astal
+	'libastal-powerprofiles-git' # Power profiles library for astal
+	'libastal-tray'              # System tray library for astal
+	'libastal-wireplumber'       # Wireplumber library for astal
+	'dart-sass'                  # Sass compiler
 
 	# Optional (made required)
 	'cliphist'              # for clipboard

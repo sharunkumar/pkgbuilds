@@ -1,7 +1,7 @@
 pkgbase = delta-shell-meta
 	pkgdesc = Meta package for Delta Shell
 	pkgver = 1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
@@ -14,7 +14,7 @@ pkgbase = delta-shell-meta
 	depends = libastal-mpris
 	depends = libastal-network
 	depends = libastal-notifd
-	depends = libastal-powerprofiles
+	depends = libastal-powerprofiles-git
 	depends = libastal-tray
 	depends = libastal-wireplumber
 	depends = dart-sass
