@@ -1,7 +1,7 @@
 # Maintainer: Sharun Kumar <sharun@sharunkumar.com>
 pkgname=watch-dogs-kde-splash-arch
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Watch_Dogs x Arch Linux splash screen for KDE Plasma 6"
 arch=(any)
 url="https://github.com/sharunkumar/watch_dogs-kde-splash-arch"
@@ -15,6 +15,6 @@ package() {
     install -dm755 "$pkgdir/usr/share/plasma/look-and-feel/com.sharunkumar.watchdogsxarchlinux/contents"
     install -Dm644 metadata.json \
         "$pkgdir/usr/share/plasma/look-and-feel/com.sharunkumar.watchdogsxarchlinux/"
-    cp -r contents/splash \
+    cp -r contents/splash contents/previews \
         "$pkgdir/usr/share/plasma/look-and-feel/com.sharunkumar.watchdogsxarchlinux/contents/"
 }

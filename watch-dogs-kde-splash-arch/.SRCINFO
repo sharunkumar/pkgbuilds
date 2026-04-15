@@ -1,7 +1,7 @@
 pkgbase = watch-dogs-kde-splash-arch
 	pkgdesc = Watch_Dogs x Arch Linux splash screen for KDE Plasma 6
 	pkgver = 1.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/sharunkumar/watch_dogs-kde-splash-arch
 	arch = any
 	license = GPL
