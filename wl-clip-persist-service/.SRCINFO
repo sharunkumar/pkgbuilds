@@ -1,0 +1,12 @@
+pkgbase = wl-clip-persist-service
+	pkgdesc = Systemd user service to persist Wayland clipboard after source closes
+	pkgver = 1.0.0
+	pkgrel = 1
+	install = wl-clip-persist-service.install
+	arch = any
+	license = custom
+	depends = wl-clip-persist
+	source = wl-clip-persist.service
+	sha256sums = SKIP
+
+pkgname = wl-clip-persist-service

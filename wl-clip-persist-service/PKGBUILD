@@ -1,0 +1,17 @@
+# Maintainer: Sharun <sharun@sharunkumar.com>
+pkgname=wl-clip-persist-service
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Systemd user service to persist Wayland clipboard after source closes"
+arch=('any')
+url=""
+license=('custom')
+depends=('wl-clip-persist')
+install=wl-clip-persist-service.install
+source=("wl-clip-persist.service")
+sha256sums=('SKIP')
+
+package() {
+    install -Dm644 "${srcdir}/wl-clip-persist.service" \
+        "${pkgdir}/usr/lib/systemd/user/wl-clip-persist.service"
+}

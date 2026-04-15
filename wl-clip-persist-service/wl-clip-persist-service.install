@@ -1,0 +1,12 @@
+post_install() {
+    systemctl --user enable --now wl-clip-persist.service 2>/dev/null || \
+        echo "Note: Run 'systemctl --user enable --now wl-clip-persist.service' to start the service."
+}
+
+post_upgrade() {
+    systemctl --user restart wl-clip-persist.service 2>/dev/null || true
+}
+
+pre_remove() {
+    systemctl --user disable --now wl-clip-persist.service 2>/dev/null || true
+}

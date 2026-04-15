@@ -1,0 +1,10 @@
+[Unit]
+Description=Persist Wayland clipboard after source closes
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wl-clip-persist --clipboard regular
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
