@@ -1,12 +1,13 @@
 pkgbase = 1password-custom-allowed-browsers
 	pkgdesc = Adds Zen Browser to 1Password custom allowed browsers
 	pkgver = 1
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
 	depends = 1password
 	optdepends = zen-bin: Add Zen Browser support
 	source = custom_allowed_browsers
+	sha256sums = 03a48c83e15fa07937fcb3170efac8a9852d4d4a36e809a93865b0cd33a801e2
 
 pkgname = 1password-custom-allowed-browsers

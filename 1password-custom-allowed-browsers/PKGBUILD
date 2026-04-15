@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=1password-custom-allowed-browsers
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc="Adds Zen Browser to 1Password custom allowed browsers"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
@@ -9,7 +9,7 @@ license=('custom:meta')
 depends=('1password')
 optdepends=('zen-bin: Add Zen Browser support')
 source=('custom_allowed_browsers')
-sha256sums=('27a460e3085bde5117f94da8a38d4538dd0eea9376795345ff405c5f51709526')
+sha256sums=('03a48c83e15fa07937fcb3170efac8a9852d4d4a36e809a93865b0cd33a801e2')
 
 package() {
     install -Dm644 "$srcdir/custom_allowed_browsers" "$pkgdir/etc/1password/custom_allowed_browsers"
