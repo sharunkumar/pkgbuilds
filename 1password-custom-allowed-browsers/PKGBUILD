@@ -9,6 +9,7 @@ license=('custom:meta')
 depends=('1password')
 optdepends=('zen-bin: Add Zen Browser support')
 source=('custom_allowed_browsers')
+sha256sums=('27a460e3085bde5117f94da8a38d4538dd0eea9376795345ff405c5f51709526')
 
 package() {
     install -Dm644 "$srcdir/custom_allowed_browsers" "$pkgdir/etc/1password/custom_allowed_browsers"
