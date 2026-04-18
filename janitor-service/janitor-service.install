@@ -1,0 +1,8 @@
+post_install() {
+  cat << EOF
+==> To enable the service:
+   systemctl --user daemon-reload
+   systemctl --user enable janitor.service
+   systemctl --user start janitor.service
+EOF
+}
