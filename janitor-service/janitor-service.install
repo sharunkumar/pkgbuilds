@@ -1,8 +1,9 @@
 post_install() {
-  cat << EOF
-==> To enable the service:
-   systemctl --user daemon-reload
-   systemctl --user enable janitor.service
-   systemctl --user start janitor.service
-EOF
+  systemctl --user enable --now janitor.service 2>/dev/null || \
+    echo "Note: Run 'systemctl --user enable --now janitor.service' to start the service."
+}
+
+post_upgrade() {
+  systemctl --user daemon-reload 2>/dev/null || true
+  systemctl --user restart janitor.service 2>/dev/null || true
 }

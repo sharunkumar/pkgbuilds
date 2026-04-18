@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=janitor-service
 pkgver=0.1.40
-pkgrel=3
+pkgrel=4
 pkgdesc="A service that cleans up your downloads folder"
 arch=('x86_64')
 url="https://github.com/sharunkumar/janitor"

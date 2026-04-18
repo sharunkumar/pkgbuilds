@@ -1,7 +1,7 @@
 pkgbase = janitor-service
 	pkgdesc = A service that cleans up your downloads folder
 	pkgver = 0.1.40
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/sharunkumar/janitor
 	install = janitor-service.install
 	arch = x86_64
