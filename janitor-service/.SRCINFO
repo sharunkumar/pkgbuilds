@@ -1,0 +1,12 @@
+pkgbase = janitor-service
+	pkgdesc = A service that cleans up your downloads folder
+	pkgver = 0.1.40
+	pkgrel = 1
+	url = https://github.com/sharunkumar/janitor
+	arch = x86_64
+	license = MIT
+	makedepends = cargo
+	source = https://crates.io/api/v1/crates/janitor-service/0.1.40/download
+	sha256sums = bd74998f380ab4f0a4a310825ca1cfa74c131acc18075c6c5a08724b4f4cb68a
+
+pkgname = janitor-service

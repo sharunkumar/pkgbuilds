@@ -1,0 +1,26 @@
+# Maintainer: Sharun <sharun@sharunkumar.com>
+pkgname=janitor-service
+pkgver=0.1.40
+pkgrel=1
+pkgdesc="A service that cleans up your downloads folder"
+arch=('x86_64')
+url="https://github.com/sharunkumar/janitor"
+license=('MIT')
+depends=()
+makedepends=('cargo')
+source=("https://crates.io/api/v1/crates/janitor-service/${pkgver}/download")
+sha256sums=('bd74998f380ab4f0a4a310825ca1cfa74c131acc18075c6c5a08724b4f4cb68a')
+
+build() {
+    cd "$pkgname-$pkgver"
+    cargo build --release
+    ./target/release/$pkgname systemd > "$srcdir/janitor.service"
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+
+    install -Dm644 "$srcdir/janitor.service" \
+        "$pkgdir/usr/lib/systemd/user/janitor.service"
+}
