@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=janitor-service
 pkgver=0.1.40
-pkgrel=1
+pkgrel=2
 pkgdesc="A service that cleans up your downloads folder"
 arch=('x86_64')
 url="https://github.com/sharunkumar/janitor"
@@ -14,7 +14,7 @@ sha256sums=('bd74998f380ab4f0a4a310825ca1cfa74c131acc18075c6c5a08724b4f4cb68a')
 build() {
     cd "$pkgname-$pkgver"
     cargo build --release
-    ./target/release/$pkgname systemd > "$srcdir/janitor.service"
+    ./target/release/$pkgname systemd | sed 's|%h/.cargo/bin/janitor-service|/usr/bin/janitor-service|g' > "$srcdir/janitor.service"
 }
 
 package() {
