@@ -1,7 +1,7 @@
 pkgbase = ghostty-git
 	pkgdesc = Fast, native, feature-rich terminal emulator (sharunkumar fork, gtk-global-shortcuts-dedupe)
 	pkgver = 1.3.1.r719.g9292650
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/sharunkumar/ghostty
 	arch = x86_64
 	arch = aarch64
@@ -36,8 +36,14 @@ pkgbase = ghostty-git
 	depends = libwayland-client.so
 	depends = zlib
 	provides = ghostty=1.3.1.r719.g9292650
+	provides = ghostty-shell-integration=1.3.1.r719.g9292650
+	provides = ghostty-terminfo=1.3.1.r719.g9292650
 	conflicts = ghostty
 	conflicts = ghostty-bin
+	conflicts = ghostty-shell-integration
+	conflicts = ghostty-terminfo
+	replaces = ghostty-shell-integration
+	replaces = ghostty-terminfo
 	source = ghostty::git+https://github.com/sharunkumar/ghostty.git#branch=gtk-global-shortcuts-dedupe
 	sha256sums = SKIP
 
