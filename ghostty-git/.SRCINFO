@@ -1,0 +1,44 @@
+pkgbase = ghostty-git
+	pkgdesc = Fast, native, feature-rich terminal emulator (sharunkumar fork, gtk-global-shortcuts-dedupe)
+	pkgver = 1.3.1.r719.g9292650
+	pkgrel = 1
+	url = https://github.com/sharunkumar/ghostty
+	arch = x86_64
+	arch = aarch64
+	license = MIT
+	makedepends = blueprint-compiler
+	makedepends = git
+	makedepends = pandoc-cli
+	makedepends = zig
+	depends = bzip2
+	depends = fontconfig
+	depends = libfontconfig.so
+	depends = freetype2
+	depends = libfreetype.so
+	depends = gcc-libs
+	depends = glibc
+	depends = glib2
+	depends = libglib-2.0.so
+	depends = libgio-2.0.so
+	depends = libgobject-2.0.so
+	depends = gtk4
+	depends = libgtk-4.so
+	depends = gtk4-layer-shell
+	depends = libx11
+	depends = harfbuzz
+	depends = libharfbuzz.so
+	depends = libadwaita
+	depends = libadwaita-1.so
+	depends = libpng
+	depends = oniguruma
+	depends = pixman
+	depends = wayland
+	depends = libwayland-client.so
+	depends = zlib
+	provides = ghostty=1.3.1.r719.g9292650
+	conflicts = ghostty
+	conflicts = ghostty-bin
+	source = ghostty::git+https://github.com/sharunkumar/ghostty.git#branch=gtk-global-shortcuts-dedupe
+	sha256sums = SKIP
+
+pkgname = ghostty-git
