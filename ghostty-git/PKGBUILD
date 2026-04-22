@@ -1,0 +1,73 @@
+# Maintainer: Sharun <sharun@sharunkumar.com>
+# Based on the official AUR ghostty-git PKGBUILD by Gregory Anders and Caleb Maclennan.
+#
+# This builds Ghostty from sharunkumar/ghostty fork on the
+# gtk-global-shortcuts-dedupe branch (a patch that prevents KDE shortcut
+# conflict popups when secondary non-unique Ghostty processes spawn — e.g.
+# from arch-update's Terminal=true desktop entry).
+
+_pkgbase=ghostty
+_branch=gtk-global-shortcuts-dedupe
+pkgname=$_pkgbase-git
+pkgrel=1
+pkgver=1.3.1.r719.g9292650
+pkgdesc="Fast, native, feature-rich terminal emulator (sharunkumar fork, $_branch)"
+arch=(x86_64 aarch64)
+url="https://github.com/sharunkumar/$_pkgbase"
+license=(MIT)
+depends=(bzip2
+         fontconfig libfontconfig.so
+         freetype2 libfreetype.so
+         gcc-libs
+         glibc
+         glib2 libglib-2.0.so libgio-2.0.so libgobject-2.0.so
+         gtk4 libgtk-4.so
+         gtk4-layer-shell
+         libx11
+         harfbuzz libharfbuzz.so
+         libadwaita libadwaita-1.so
+         libpng
+         oniguruma
+         pixman
+         wayland libwayland-client.so
+         zlib)
+makedepends=(blueprint-compiler
+             git
+             pandoc-cli
+             zig)
+provides=("$_pkgbase=$pkgver")
+conflicts=("$_pkgbase" "$_pkgbase-bin")
+source=("$_pkgbase::git+$url.git#branch=$_branch")
+sha256sums=('SKIP')
+
+prepare() {
+	cd "$_pkgbase"
+	ZIG_GLOBAL_CACHE_DIR="$srcdir/zig-global-cache/" ./nix/build-support/fetch-zig-cache.sh
+}
+
+pkgver() {
+	cd "$_pkgbase"
+	git describe --long --tags --abbrev=7 --match="v*" HEAD |
+		sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+	cd "$_pkgbase"
+	DESTDIR=build zig build \
+		--summary all \
+		--prefix "/usr" \
+		--system "$srcdir/zig-global-cache/p" \
+		-Doptimize=ReleaseFast \
+		-Dgtk-wayland=true \
+		-Dgtk-x11=true \
+		-Dcpu=baseline \
+		-Dpie=true \
+		-Demit-docs \
+		-Dversion-string="${pkgver%.r*}-r${pkgver#*.r}-$pkgrel-$_branch"
+}
+
+package() {
+	cd "$_pkgbase"
+	cp -a build/* "$pkgdir/"
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}
