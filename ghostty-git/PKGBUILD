@@ -9,7 +9,7 @@
 _pkgbase=ghostty
 _branch=gtk-global-shortcuts-dedupe
 pkgname=$_pkgbase-git
-pkgrel=2
+pkgrel=3
 pkgver=1.3.1.r719.g9292650
 pkgdesc="Fast, native, feature-rich terminal emulator (sharunkumar fork, $_branch)"
 arch=(x86_64 aarch64)
@@ -35,8 +35,14 @@ makedepends=(blueprint-compiler
 	git
 	pandoc-cli
 	zig)
-provides=("$_pkgbase=$pkgver")
-conflicts=("$_pkgbase" "$_pkgbase-bin")
+provides=("$_pkgbase=$pkgver"
+          "$_pkgbase-shell-integration=$pkgver"
+          "$_pkgbase-terminfo=$pkgver")
+conflicts=("$_pkgbase" "$_pkgbase-bin"
+           "$_pkgbase-shell-integration"
+           "$_pkgbase-terminfo")
+replaces=("$_pkgbase-shell-integration"
+          "$_pkgbase-terminfo")
 source=("$_pkgbase::git+$url.git#branch=$_branch")
 sha256sums=('SKIP')
 
@@ -79,4 +85,12 @@ package() {
 	cd "$_pkgbase"
 	cp -a build/* "$pkgdir/"
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+
+	# /usr/share/terminfo/g/ghostty is also shipped by the ncurses package
+	# (a core system package we cannot conflict with). Remove our copy to
+	# avoid a file conflict on install. The xterm-ghostty entry in
+	# /usr/share/terminfo/x/ is unique to us and stays.
+	rm -f "$pkgdir/usr/share/terminfo/g/ghostty"
+	# Clean up the now-empty directory if applicable.
+	rmdir --ignore-fail-on-non-empty "$pkgdir/usr/share/terminfo/g" 2>/dev/null || true
 }
