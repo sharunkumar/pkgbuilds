@@ -47,8 +47,17 @@ prepare() {
 
 pkgver() {
 	cd "$_pkgbase"
-	git describe --long --tags --abbrev=7 --match="v*" HEAD |
-		sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+	# Try the upstream-style describe first (requires v* tags reachable).
+	# Fall back to "0.r<count>.g<sha>" if no tags are present in the clone
+	# (e.g. when GitHub fork hasn't mirrored upstream tags yet).
+	if git describe --long --tags --abbrev=7 --match="v*" HEAD >/dev/null 2>&1; then
+		git describe --long --tags --abbrev=7 --match="v*" HEAD |
+			sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+	else
+		printf '0.r%s.g%s' \
+			"$(git rev-list --count HEAD)" \
+			"$(git rev-parse --short=7 HEAD)"
+	fi
 }
 
 build() {
