@@ -1,15 +1,15 @@
 # Maintainer: Sharun Kumar <sharun@sharunkumar.com>
 
-pkgname=ghostty-xdg-terminal-default
+pkgname=xdg-terminal-default
 pkgver=1
 pkgrel=1
-pkgdesc='Sets Ghostty as the default terminal for xdg-terminal-exec (system-wide)'
+pkgdesc='Sets alacritty as the default terminal for xdg-terminal-exec (system-wide)'
 arch=('any')
 url='https://github.com/sharunkumar/pkgbuilds'
 license=('custom:meta')
 depends=(
 	'xdg-terminal-exec' # provider that reads xdg-terminals.list
-	'ghostty'           # the terminal we point at
+	'alacritty'         # the terminal we point at
 )
 backup=('etc/xdg/xdg-terminals.list')
 source=('xdg-terminals.list')
