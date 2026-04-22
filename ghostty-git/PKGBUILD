@@ -9,32 +9,32 @@
 _pkgbase=ghostty
 _branch=gtk-global-shortcuts-dedupe
 pkgname=$_pkgbase-git
-pkgrel=1
+pkgrel=2
 pkgver=1.3.1.r719.g9292650
 pkgdesc="Fast, native, feature-rich terminal emulator (sharunkumar fork, $_branch)"
 arch=(x86_64 aarch64)
 url="https://github.com/sharunkumar/$_pkgbase"
 license=(MIT)
 depends=(bzip2
-         fontconfig libfontconfig.so
-         freetype2 libfreetype.so
-         gcc-libs
-         glibc
-         glib2 libglib-2.0.so libgio-2.0.so libgobject-2.0.so
-         gtk4 libgtk-4.so
-         gtk4-layer-shell
-         libx11
-         harfbuzz libharfbuzz.so
-         libadwaita libadwaita-1.so
-         libpng
-         oniguruma
-         pixman
-         wayland libwayland-client.so
-         zlib)
+	fontconfig libfontconfig.so
+	freetype2 libfreetype.so
+	gcc-libs
+	glibc
+	glib2 libglib-2.0.so libgio-2.0.so libgobject-2.0.so
+	gtk4 libgtk-4.so
+	gtk4-layer-shell
+	libx11
+	harfbuzz libharfbuzz.so
+	libadwaita libadwaita-1.so
+	libpng
+	oniguruma
+	pixman
+	wayland libwayland-client.so
+	zlib)
 makedepends=(blueprint-compiler
-             git
-             pandoc-cli
-             zig)
+	git
+	pandoc-cli
+	zig)
 provides=("$_pkgbase=$pkgver")
 conflicts=("$_pkgbase" "$_pkgbase-bin")
 source=("$_pkgbase::git+$url.git#branch=$_branch")
