@@ -1,0 +1,14 @@
+pkgbase = ghostty-xdg-terminal-default
+	pkgdesc = Sets Ghostty as the default terminal for xdg-terminal-exec (system-wide)
+	pkgver = 1
+	pkgrel = 1
+	url = https://github.com/sharunkumar/pkgbuilds
+	arch = any
+	license = custom:meta
+	depends = xdg-terminal-exec
+	depends = ghostty
+	backup = etc/xdg/xdg-terminals.list
+	source = xdg-terminals.list
+	sha256sums = SKIP
+
+pkgname = ghostty-xdg-terminal-default
