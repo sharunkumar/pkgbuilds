@@ -1,0 +1,28 @@
+# Maintainer: Sharun Kumar <sharun@sharunkumar.com>
+
+pkgname=ghostty-xdg-terminal-default
+pkgver=1
+pkgrel=1
+pkgdesc='Sets Ghostty as the default terminal for xdg-terminal-exec (system-wide)'
+arch=('any')
+url='https://github.com/sharunkumar/pkgbuilds'
+license=('custom:meta')
+depends=(
+	'xdg-terminal-exec' # provider that reads xdg-terminals.list
+	'ghostty'           # the terminal we point at
+)
+backup=('etc/xdg/xdg-terminals.list')
+source=('xdg-terminals.list')
+sha256sums=('SKIP')
+
+package() {
+	# /etc/xdg/xdg-terminals.list is the system-wide config path
+	# (see xdg-terminal-exec(1)). Per-user ~/.config/xdg-terminals.list
+	# overrides this file, so users can still pick a different default.
+	install -Dm0644 "$srcdir/xdg-terminals.list" \
+		"$pkgdir/etc/xdg/xdg-terminals.list"
+
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	echo "This is a configuration package." \
+		>"$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
