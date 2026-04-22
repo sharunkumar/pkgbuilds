@@ -9,7 +9,7 @@
 _pkgbase=ghostty
 _branch=gtk-global-shortcuts-dedupe
 pkgname=$_pkgbase-git
-pkgrel=3
+pkgrel=4
 pkgver=1.3.1.r719.g9292650
 pkgdesc="Fast, native, feature-rich terminal emulator (sharunkumar fork, $_branch)"
 arch=(x86_64 aarch64)
@@ -30,19 +30,17 @@ depends=(bzip2
 	oniguruma
 	pixman
 	wayland libwayland-client.so
-	zlib)
+	zlib
+	# Provided by separate Arch packages; we let them own their files
+	# instead of conflicting/replacing.
+	ghostty-shell-integration
+	ghostty-terminfo)
 makedepends=(blueprint-compiler
 	git
 	pandoc-cli
 	zig)
-provides=("$_pkgbase=$pkgver"
-          "$_pkgbase-shell-integration=$pkgver"
-          "$_pkgbase-terminfo=$pkgver")
-conflicts=("$_pkgbase" "$_pkgbase-bin"
-           "$_pkgbase-shell-integration"
-           "$_pkgbase-terminfo")
-replaces=("$_pkgbase-shell-integration"
-          "$_pkgbase-terminfo")
+provides=("$_pkgbase=$pkgver")
+conflicts=("$_pkgbase" "$_pkgbase-bin")
 source=("$_pkgbase::git+$url.git#branch=$_branch")
 sha256sums=('SKIP')
 
@@ -86,11 +84,17 @@ package() {
 	cp -a build/* "$pkgdir/"
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 
-	# /usr/share/terminfo/g/ghostty is also shipped by the ncurses package
-	# (a core system package we cannot conflict with). Remove our copy to
-	# avoid a file conflict on install. The xterm-ghostty entry in
-	# /usr/share/terminfo/x/ is unique to us and stays.
-	rm -f "$pkgdir/usr/share/terminfo/g/ghostty"
-	# Clean up the now-empty directory if applicable.
-	rmdir --ignore-fail-on-non-empty "$pkgdir/usr/share/terminfo/g" 2>/dev/null || true
+	# Drop files that are owned by other packages on Arch:
+	#   - /usr/share/terminfo/g/ghostty       — owned by `ncurses`
+	#   - /usr/share/terminfo/x/xterm-ghostty — owned by `ghostty-terminfo`
+	#   - /usr/share/ghostty/shell-integration/* — owned by `ghostty-shell-integration`
+	#
+	# This fork only patches GTK app code; the upstream shell integration
+	# and terminfo files are byte-identical to what those packages ship,
+	# so we let those packages keep ownership and avoid forcing pacman to
+	# uninstall them. Keeping them installed also means switching back to
+	# upstream `ghostty` (the binary package) doesn't require reinstalls.
+	rm -rf \
+		"$pkgdir/usr/share/terminfo" \
+		"$pkgdir/usr/share/ghostty/shell-integration"
 }
