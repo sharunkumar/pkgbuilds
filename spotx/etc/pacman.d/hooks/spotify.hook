@@ -1,0 +1,13 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Type=Package
+Target=spotify
+
+[Action]
+Description=SpotX Hook
+Depends=curl
+Depends=bash
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c '/usr/bin/bash <(/usr/bin/curl -sSL https://raw.githubusercontent.com/SpotX-Official/SpotX-Bash/main/spotx.sh) -P /opt/spotify/'

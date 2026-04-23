@@ -1,0 +1,11 @@
+pkgbase = spotx
+	pkgdesc = Spotify pacman hook for SpotX
+	pkgver = 1
+	pkgrel = 1
+	arch = any
+	depends = spotify
+	depends = curl
+	depends = bash
+	options = !strip
+
+pkgname = spotx
