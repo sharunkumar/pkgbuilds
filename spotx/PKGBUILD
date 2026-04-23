@@ -2,7 +2,7 @@
 
 pkgname=spotx
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc='Spotify pacman hook for SpotX'
 arch=('any')
 depends=('curl' 'bash')
@@ -10,5 +10,5 @@ options=('!strip')
 
 package() {
 	install -dm755 "$pkgdir/etc/pacman.d/hooks/"
-	install -m644 "$srcdir/etc/pacman.d/hooks/spotify.hook" "$pkgdir/etc/pacman.d/hooks/spotify.hook"
+	install -m644 "$startdir/etc/pacman.d/hooks/spotify.hook" "$pkgdir/etc/pacman.d/hooks/spotify.hook"
 }
