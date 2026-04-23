@@ -8,6 +8,7 @@ Target=spotify
 Description=SpotX Hook
 Depends=curl
 Depends=bash
+Depends=zip
 When=PostTransaction
 NeedsTargets
 Exec=/bin/sh -c '/usr/bin/bash <(/usr/bin/curl -sSL https://raw.githubusercontent.com/SpotX-Official/SpotX-Bash/main/spotx.sh) -P /opt/spotify/'

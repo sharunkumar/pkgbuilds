@@ -2,10 +2,10 @@
 
 pkgname=spotx
 pkgver=1
-pkgrel=3
+pkgrel=4
 pkgdesc='Spotify pacman hook for SpotX'
 arch=('any')
-depends=('curl' 'bash')
+depends=('curl' 'bash' 'zip')
 options=('!strip')
 
 package() {
