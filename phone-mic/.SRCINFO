@@ -1,0 +1,10 @@
+pkgbase = phone-mic
+	pkgdesc = Use your Android phone as a microphone via scrcpy
+	pkgver = 1
+	pkgrel = 1
+	arch = any
+	depends = scrcpy
+	depends = pulseaudio-utils
+	depends = bash
+
+pkgname = phone-mic

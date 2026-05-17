@@ -1,0 +1,12 @@
+# Maintainer: Sharun Kumar <sharun@sharunkumar.com>
+
+pkgname=phone-mic
+pkgver=1
+pkgrel=1
+pkgdesc='Use your Android phone as a microphone via scrcpy'
+arch=('any')
+depends=('scrcpy' 'pulseaudio-utils' 'bash')
+
+package() {
+    install -Dm755 "$startdir/phone-mic.sh" "$pkgdir/usr/bin/phone-mic"
+}
