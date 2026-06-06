@@ -1,7 +1,7 @@
 pkgbase = 1password-custom-allowed-browsers
 	pkgdesc = Adds 1Password custom allowed browsers
 	pkgver = 2
-	pkgrel = 0
+	pkgrel = 1
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
