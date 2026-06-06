@@ -1,7 +1,7 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=1password-custom-allowed-browsers
-pkgver=1
-pkgrel=3
+pkgver=2
+pkgrel=0
 pkgdesc="Adds 1Password custom allowed browsers"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
