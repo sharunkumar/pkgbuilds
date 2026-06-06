@@ -1,13 +1,14 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 pkgname=1password-custom-allowed-browsers
 pkgver=2
-pkgrel=2
+pkgrel=3
 pkgdesc="Adds 1Password custom allowed browsers"
 arch=('any')
 url="https://github.com/sharunkumar/pkgbuilds"
 license=('custom:meta')
 depends=('1password')
-optdepends=('zen-bin: Add Zen Browser support')
+optdepends=('brave-origin: Add Brave Browser support'
+	'zen-bin: Add Zen Browser support')
 source=('custom_allowed_browsers')
 sha256sums=('SKIP')
 
