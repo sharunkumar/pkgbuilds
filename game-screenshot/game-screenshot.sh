@@ -10,4 +10,4 @@ GAME=$(echo "$GAME" | tr ' /' '_-')
 mkdir -p "$HOME/Pictures/Screenshots"
 FILE="$HOME/Pictures/Screenshots/${GAME}_$(date +%Y%m%d_%H%M%S).png"
 spectacle -b -a -n -o "$FILE"
-wl-copy < "$FILE"
+wl-copy -t text/uri-list "file://$FILE"

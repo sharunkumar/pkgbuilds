@@ -2,7 +2,7 @@
 
 pkgname=game-screenshot
 pkgver=1
-pkgrel=4
+pkgrel=5
 pkgdesc='Take a screenshot of the active window, named after the game, with timestamp'
 arch=('any')
 url='https://github.com/sharunkumar/pkgbuilds'
