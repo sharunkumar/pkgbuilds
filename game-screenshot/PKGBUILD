@@ -2,7 +2,7 @@
 
 pkgname=game-screenshot
 pkgver=1
-pkgrel=3
+pkgrel=4
 pkgdesc='Take a screenshot of the active window, named after the game, with timestamp'
 arch=('any')
 url='https://github.com/sharunkumar/pkgbuilds'
@@ -10,6 +10,7 @@ license=('custom:meta')
 depends=(
 	'kdotool'
 	'spectacle'
+	'wl-clipboard'
 )
 source=('game-screenshot.sh')
 sha256sums=('SKIP')

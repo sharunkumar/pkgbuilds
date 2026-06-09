@@ -8,4 +8,6 @@ GAME=$(cat "/proc/$PID/comm" 2>/dev/null)
 [ -z "$GAME" ] && GAME="screenshot"
 GAME=$(echo "$GAME" | tr ' /' '_-')
 mkdir -p "$HOME/Pictures/Screenshots"
-spectacle -b -a -n -o "$HOME/Pictures/Screenshots/${GAME}_$(date +%Y%m%d_%H%M%S).png"
+FILE="$HOME/Pictures/Screenshots/${GAME}_$(date +%Y%m%d_%H%M%S).png"
+spectacle -b -a -n -o "$FILE"
+wl-copy < "$FILE"
