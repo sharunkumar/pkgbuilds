@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GAME=$(kdotool getactivewindow getwindowclassname 2>/dev/null)
+PID=$(kdotool getactivewindow getwindowpid 2>/dev/null)
+GAME=$(cat "/proc/$PID/comm" 2>/dev/null)
+[ -z "$GAME" ] && GAME=$(kdotool getactivewindow getwindowclassname 2>/dev/null)
 [ -z "$GAME" ] && GAME=$(kdotool getactivewindow getwindowname 2>/dev/null)
 [ -z "$GAME" ] && GAME="screenshot"
 GAME=$(echo "$GAME" | tr ' /' '_-')
