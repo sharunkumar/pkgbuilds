@@ -1,7 +1,7 @@
 pkgbase = game-screenshot
 	pkgdesc = Take a screenshot of the active window, named after the game, with timestamp
 	pkgver = 1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/sharunkumar/pkgbuilds
 	arch = any
 	license = custom:meta
