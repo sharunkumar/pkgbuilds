@@ -1,0 +1,23 @@
+# Maintainer: Sharun Kumar <sharun@sharunkumar.com>
+
+pkgname=game-screenshot
+pkgver=1
+pkgrel=1
+pkgdesc='Take a screenshot of the active window, named after the game, with timestamp'
+arch=('any')
+url='https://github.com/sharunkumar/pkgbuilds'
+license=('custom:meta')
+depends=(
+	'kdotool'
+	'spectacle'
+)
+source=('game-screenshot.sh')
+sha256sums=('SKIP')
+
+package() {
+	install -Dm755 "$srcdir/$pkgname.sh" "$pkgdir/usr/bin/$pkgname"
+
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	echo "This is a configuration package." \
+		>"$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
