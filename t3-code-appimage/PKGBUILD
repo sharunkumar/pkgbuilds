@@ -1,0 +1,44 @@
+# Maintainer: Sharun <sharun@sharunkumar.com>
+
+_pkgname=t3-code
+pkgname=$_pkgname-appimage
+pkgver=0.0.27
+pkgrel=1
+pkgdesc="AI-powered code editor built with the T3 Stack"
+arch=('x86_64')
+url="https://github.com/pingdotgg/$_pkgname"
+license=('MIT')
+depends=('fuse2')
+source=("$_pkgname-$pkgver-x86_64.AppImage::https://github.com/pingdotgg/$_pkgname/releases/download/v$pkgver/T3-Code-$pkgver-x86_64.AppImage")
+sha256sums=('00b926ef04956c395947b4d655a8373516cfd64bc6250aa6a51d66999bd20805')
+
+prepare() {
+  cd "$srcdir"
+  chmod +x "$_pkgname-$pkgver-x86_64.AppImage"
+  "./$_pkgname-$pkgver-x86_64.AppImage" --appimage-extract >/dev/null
+}
+
+package() {
+  cd "$srcdir"
+
+  install -Dm755 "$_pkgname-$pkgver-x86_64.AppImage" "$pkgdir/opt/$_pkgname/$_pkgname-x86_64.AppImage"
+
+  mkdir -p "$pkgdir/usr/bin"
+  ln -sf "/opt/$_pkgname/$_pkgname-x86_64.AppImage" "$pkgdir/usr/bin/$_pkgname"
+
+  local _icon=$(find squashfs-root -name "*.png" -type f 2>/dev/null | head -1)
+  if [ -n "$_icon" ]; then
+    install -Dm644 "$_icon" "$pkgdir/usr/share/pixmaps/$_pkgname.png"
+  fi
+
+  install -Dm644 /dev/stdin "$pkgdir/usr/share/applications/$_pkgname.desktop" <<EOF
+[Desktop Entry]
+Name=T3 Code
+Comment=AI-powered code editor built with the T3 Stack
+Exec=$_pkgname
+Icon=$_pkgname
+Type=Application
+Categories=Development;IDE;
+Terminal=false
+EOF
+}
