@@ -3,11 +3,12 @@
 _pkgname=t3-code
 pkgname=$_pkgname-appimage
 pkgver=0.0.27
-pkgrel=2
+pkgrel=3
 pkgdesc="AI-powered code editor built with the T3 Stack"
 arch=('x86_64')
 url="https://github.com/pingdotgg/t3code"
 license=('MIT')
+options=('!strip')
 depends=('fuse2')
 source=("$_pkgname-$pkgver-x86_64.AppImage::https://github.com/pingdotgg/t3code/releases/download/v$pkgver/T3-Code-$pkgver-x86_64.AppImage")
 sha256sums=('00b926ef04956c395947b4d655a8373516cfd64bc6250aa6a51d66999bd20805')
