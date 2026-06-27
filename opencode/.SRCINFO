@@ -10,7 +10,7 @@ pkgbase = opencode
 	conflicts = opencode
 	options = !debug
 	options = !strip
-	source_x86_64 = https://github.com/sharunkumar/opencode/releases/download/v2026.6.27-68a7483/opencode-linux-x64.tar.gz
+	source_x86_64 = opencode_2026.6.27_68a7483_x86_64.tar.gz::https://github.com/sharunkumar/opencode/releases/download/v2026.6.27-68a7483/opencode-linux-x64.tar.gz
 	sha256sums_x86_64 = 70697ec2d32eb7ecf80944ab03db2da328f36c4b22b5e70cfd3d0a748a780ee0
 
 pkgname = opencode
