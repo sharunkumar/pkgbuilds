@@ -3,7 +3,7 @@
 pkgname=opencode
 pkgver=2026.6.27
 _commit=68a7483
-pkgrel=3
+pkgrel=4
 pkgdesc="The open source AI coding agent CLI"
 arch=('x86_64')
 url="https://github.com/sharunkumar/opencode"
