@@ -1,13 +1,15 @@
 pkgbase = opencode
 	pkgdesc = The open source AI coding agent CLI
 	pkgver = 2026.6.24
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/sharunkumar/opencode
 	arch = x86_64
 	license = Apache
 	depends = glibc
 	provides = opencode
 	conflicts = opencode
+	options = !debug
+	options = !strip
 	source_x86_64 = https://github.com/sharunkumar/opencode/releases/download/v2026.6.24-29e5319/opencode-linux-x64.tar.gz
 	sha256sums_x86_64 = 8b06deb1e7bdd718ca6ac3bedb3ff8917749f19c4159555818d7f3c60b9943cf
 
