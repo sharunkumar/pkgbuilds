@@ -1,7 +1,7 @@
 pkgbase = opencode
 	pkgdesc = The open source AI coding agent CLI
-	pkgver = 2026.6.27
-	pkgrel = 5
+	pkgver = 2026.6.27_c0feb76
+	pkgrel = 1
 	url = https://github.com/sharunkumar/opencode
 	arch = x86_64
 	license = Apache
