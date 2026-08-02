@@ -1,8 +1,8 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 # Contributor: anomalyco
 pkgname=opencode
-_pkgver_base=2026.6.27
-_commit=c0feb76
+_pkgver_base=2026.7.31
+_commit=cdc173d
 pkgver=${_pkgver_base}_${_commit}
 pkgrel=1
 pkgdesc="The open source AI coding agent CLI"
@@ -12,7 +12,7 @@ license=('Apache')
 depends=('glibc')
 options=('!debug' '!strip')
 source_x86_64=("${pkgname}_${pkgver}_x86_64.tar.gz::https://github.com/sharunkumar/opencode/releases/download/v${_pkgver_base}-${_commit}/opencode-linux-x64.tar.gz")
-sha256sums_x86_64=('97e1fbbcae6ce5a3cfa0f88d8eb023a8249781be64b53d2b2dd7f79f2ea4fd28')
+sha256sums_x86_64=('bcdac94023153331965b80f9099ee960fe4109e718bdb14ae7534d80826bb033')
 
 package() {
 	install -Dm755 opencode "$pkgdir/usr/bin/opencode"
