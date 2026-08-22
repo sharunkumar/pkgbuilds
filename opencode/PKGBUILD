@@ -1,8 +1,8 @@
 # Maintainer: Sharun <sharun@sharunkumar.com>
 # Contributor: anomalyco
 pkgname=opencode
-_pkgver_base=2026.7.31
-_commit=cdc173d
+_pkgver_base=2026.8.22
+_commit=3aed1a9
 pkgver=${_pkgver_base}_${_commit}
 pkgrel=1
 pkgdesc="The open source AI coding agent CLI"
