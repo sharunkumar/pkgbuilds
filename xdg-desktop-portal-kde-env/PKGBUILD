@@ -1,0 +1,28 @@
+# Maintainer: Sharun Kumar <sharun@sharunkumar.com>
+
+pkgname=xdg-desktop-portal-kde-env
+pkgver=1
+pkgrel=1
+pkgdesc='Pins XDG_CURRENT_DESKTOP=KDE for xdg-desktop-portal so it selects the KDE backend (fixes GlobalShortcuts-dependent apps like ghostty quick terminal)'
+arch=('any')
+url='https://github.com/sharunkumar/pkgbuilds'
+license=('custom:meta')
+depends=(
+	'xdg-desktop-portal'     # main portal service we drop the env into
+	'xdg-desktop-portal-kde' # backend providing GlobalShortcuts
+)
+install="$pkgname.install"
+source=('kde-desktop.conf')
+sha256sums=('SKIP')
+
+package() {
+	# User unit drop-in: applied by systemd at every portal spawn, so the
+	# backend selection deterministically picks kde.portal regardless of
+	# boot ordering (see AGENTS.md for why this is needed).
+	install -Dm0644 "$srcdir/kde-desktop.conf" \
+		"$pkgdir/usr/lib/systemd/user/xdg-desktop-portal.service.d/kde-desktop.conf"
+
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	echo "This is a configuration package." \
+		>"$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

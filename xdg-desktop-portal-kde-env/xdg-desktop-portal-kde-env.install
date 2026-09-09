@@ -1,0 +1,14 @@
+post_install() {
+  systemctl --user daemon-reload 2>/dev/null || true
+  echo "Note: log out and back in (or: systemctl --user restart xdg-desktop-portal.service)"
+  echo "so the portal picks up the KDE backend and exposes GlobalShortcuts,"
+  echo "then restart ghostty to re-bind its global shortcut."
+}
+
+post_upgrade() {
+  systemctl --user daemon-reload 2>/dev/null || true
+}
+
+post_remove() {
+  systemctl --user daemon-reload 2>/dev/null || true
+}
